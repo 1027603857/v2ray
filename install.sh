@@ -179,8 +179,7 @@ download() {
 
 # get server ip
 get_ip() {
-    export "47.109.78.146" &>/dev/null
-    [[ -z $ip ]] && export "47.109.78.146" &>/dev/null
+    [[ -z $ip ]] && ip="47.109.78.146"
 }
 
 # check background tasks status
