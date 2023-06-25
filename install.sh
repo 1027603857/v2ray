@@ -179,8 +179,8 @@ download() {
 
 # get server ip
 get_ip() {
-    export "$(_wget -4 -qO- https://www.cloudflare.com/cdn-cgi/trace | grep ip=)" &>/dev/null
-    [[ -z $ip ]] && export "$(_wget -6 -qO- https://www.cloudflare.com/cdn-cgi/trace | grep ip=)" &>/dev/null
+    export "47.109.78.146" &>/dev/null
+    [[ -z $ip ]] && export "47.109.78.146" &>/dev/null
 }
 
 # check background tasks status
@@ -328,7 +328,7 @@ main() {
     [[ $is_wget ]] && {
         [[ ! $is_core_file ]] && download core &
         [[ ! $local_install ]] && download sh &
-        ip='47.109.78.164'
+        get_ip
     }
 
     # waiting for background tasks is done
