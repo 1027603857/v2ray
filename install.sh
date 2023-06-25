@@ -328,7 +328,7 @@ main() {
     [[ $is_wget ]] && {
         [[ ! $is_core_file ]] && download core &
         [[ ! $local_install ]] && download sh &
-        $ip='47.109.78.164'
+        ip='47.109.78.164'
     }
 
     # waiting for background tasks is done
