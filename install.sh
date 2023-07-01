@@ -179,7 +179,8 @@ download() {
 
 # get server ip
 get_ip() {
-    [[ -z $ip ]] && ip="47.109.78.146"
+    export "$(_wget -4 -qO- https://www.cloudflare.com/cdn-cgi/trace | grep ip=)" &>/dev/null
+    [[ -z $ip ]] && export "$(_wget -6 -qO- https://www.cloudflare.com/cdn-cgi/trace | grep ip=)" &>/dev/null
 }
 
 # check background tasks status
